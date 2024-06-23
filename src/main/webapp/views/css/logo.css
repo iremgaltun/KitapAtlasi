@@ -1,0 +1,8 @@
+    .kitap-logo {
+        width: 100px;
+        height: 98px; 
+        position: absolute;
+        top: 1px;
+        margin-left: 10px;
+        z-index: 1000;
+    }

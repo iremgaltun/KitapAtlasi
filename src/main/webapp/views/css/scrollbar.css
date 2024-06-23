@@ -1,0 +1,21 @@
+/* Tüm tarayıcılarda geçerli genel stil */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+/* Scrollbar arka plan stili */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Scrollbar başparmak (thumb) stili */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 6px;
+}
+
+/* Scrollbar başparmak (thumb) hover stili */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

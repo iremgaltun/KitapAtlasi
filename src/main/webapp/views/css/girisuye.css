@@ -1,0 +1,49 @@
+.login-container {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top:150px;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-orange {
+    border-radius: 10px; /* Buton köşeleri yuvarlandı */
+    border: 2px solid orange; /* Kenarlık turuncu */
+    background-color:white;
+    border-color: #ff6600;
+    color: black;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #ff8533;
+    border-color: #ff8533;
+}
+
+.signup-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.signup-link a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

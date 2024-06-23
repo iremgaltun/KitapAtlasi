@@ -1,0 +1,78 @@
+
+
+.footer {
+    background-color: #9fc7aa ; /* Arka plan rengini zorla uygula */
+    padding-left: 300px; /* Tüm içeriği sağa kaydır */
+    z-index: 1000; /* Yüksek z-index değeri ver */
+    position: relative; /* z-index'in çalışması için */
+    padding: 20px; /* Footer içeriği için padding ekle */
+    display: flex;
+    width: calc(100% - 300px);
+    flex-direction: column;
+    align-items: flex-start; /* İçeriği sola hizala */
+}
+
+.footer .col-md-4 {
+    flex: 0 0 calc(33.33% - 20px); /* Sütunların genişliği */
+    max-width: calc(33.33% - 20px); /* Maksimum genişlik */
+    margin-bottom: 1px; /* Sütunlar arasındaki boşluk */
+    padding-left: 0; /* Sütunları sağa kaydır */
+}
+
+.footer h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 500px; /* Sol boşluğu sıfırla */
+    padding-left: 500px;
+    /* Başlıkları sağa kaydır */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 0; /* Sol iç boşluğu sıfırla */
+}
+
+.footer ul li {
+    margin-bottom: 2px; /* Liste elemanları arasındaki boşluk */
+}
+
+.footer ul li a {
+    color: #8080c0;
+    text-decoration: none;
+    margin-left: 0; /* Sol boşluğu sıfırla */
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    padding-left: 0; /* Sosyal ikonları sağa kaydır */
+}
+
+.social-icons li {
+    margin-right: 20px; /* Sosyal ikonlar arasındaki boşluk */
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    text-align: left; /* Alt metni sola hizala */
+    width: 100%;
+    padding-left: 0; /* Alt metni sağa kaydır */
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    margin-left: 0; /* Sol boşluğu sıfırla */
+}

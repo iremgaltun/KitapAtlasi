@@ -1,0 +1,71 @@
+.account-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px; /* Menü genişliği düzenlendi */
+    height: 250px; /* Menü yüksekliği düzenlendi */
+    z-index: 1000;
+    display: none; /* Varsayılan olarak gizli */
+}
+
+.account-dropdown .account-dropdown-header {
+    font-weight: bold;
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    height: 50px; /* Başlık yüksekliği */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid #ddd; /* Ayrım çizgileri eklendi */
+    height: 50px; /* Her sekmenin yüksekliği */
+    display: flex;
+    align-items: center;
+}
+
+.account-dropdown a:last-child {
+    border-bottom: none; /* Son öğedeki kenarlık kaldırıldı */
+}
+
+.account-dropdown a:hover {
+    background-color: #9fc7aa;
+    color: white;
+}
+
+.account-icon:hover .account-dropdown {
+    display: block; /* Üzerine gelince dropdown göster */
+}
+
+        .navbar-nav .form-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-nav .form-inline input {
+            border-radius: 30px;
+            border: 2px solid orange;
+        }
+
+        .navbar-nav .form-inline button {
+            border-radius: 20px;
+            border: 2px solid orange;
+            margin-left: 10px;
+        }
+
+        .navbar-nav .btn-light {
+            border: 2px solid orange;
+            border-radius: 20px;
+            margin-left: 10px;
+        }

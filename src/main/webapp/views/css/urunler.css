@@ -1,0 +1,38 @@
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid orange;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-orange {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #ff8533;
+    border-color: #ff8533;
+}
