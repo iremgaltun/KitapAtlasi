@@ -21,7 +21,7 @@
             background-color: orange;
             color: white;
         }
-        {
+        .btn-small {
             font-size: 0.8rem;
             padding: 5px 10px;
         }
@@ -110,6 +110,7 @@
 </div>
 
 <!-- Yeni Ürün Ekle Modal -->
+<!-- Yeni Ürün Ekle Modal -->
 <div class="modal fade" id="modalYeniUrun" tabindex="-1" role="dialog" aria-labelledby="modalYeniUrunLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -134,14 +135,18 @@
                         <input type="number" step="0.01" min="0" class="form-control" id="urunFiyati" name="urunFiyati" required>
                     </div>
                     <div class="form-group">
-                        <label for="kategoriId">Kategori ID</label>
-                        <input type="number" class="form-control" id="kategoriId" name="kategoriId" required>
+                        <label for="kategori">Ürünün Kategorisi</label>
+                        <select class="form-control" id="kategori" name="kategori" required>
+                            <option value="">Kategori Seç</option>
+                            <!-- Kategoriler buraya dinamik olarak eklenecek -->
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
                         <button type="submit" class="btn btn-primary">Kaydet</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
@@ -190,6 +195,41 @@
             window.location.href = url;
         }
     }
+   /* const kategoriler = [
+        { kategoriId: 9690, ad: 'Edebiyat' },
+        { kategoriId: 9111, ad: 'Eğitim' },
+        { kategoriId: 10269, ad: 'Roman' },
+        { kategoriId: 10848, ad: 'Çocuk' },
+        { kategoriId: 12006, ad: 'Tarih' },
+        { kategoriId: 13164, ad: 'Felsefe' },
+        { kategoriId: 11427, ad: 'Çizgiroman' },
+        { kategoriId: 13743, ad: 'Kişisel Gelişim' },
+        { kategoriId: 14322, ad: 'eKitap' }
+    ];
+
+
+
+    // Kategorileri <select> içine ekle
+    document.addEventListener('DOMContentLoaded', function() {
+        const kategoriSelect = document.getElementById('kategori');
+        kategoriler.forEach(function(kategori) {
+            const option = document.createElement('option');
+            option.value = kategori.kategoriId;
+            option.textContent = kategori.ad + ' (' + formatId(kategori.kategoriId) + ')';
+            kategoriSelect.appendChild(option);
+        });
+    });
+
+    // Kategori seçildiğinde çağrılan fonksiyon
+    function kategoriSecildi() {
+        const kategoriSelect = document.getElementById('kategori');
+        const secilenIndex = kategoriSelect.selectedIndex;
+        const secilenOption = kategoriSelect.options[secilenIndex];
+        secilenOption.textContent = secilenOption.textContent.replace('Kategori Seç', 'Seçilen Kategori');
+    }
+
+*/
+
 </script>
 
 </body>

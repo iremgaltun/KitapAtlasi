@@ -123,10 +123,8 @@
             <div class="col-md-4">
                 <h5>Hakkımızda</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#"müşteri hizmetleri></a></li>
-                    <li><a href="#"></a>iletilşim bilgileri</li>
-                    <li><a href="#"></a>e-posta</li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#">Müşteri Hizmetleri</a></li>
+                    <li><a href="#">İletişim Bilgileri</a></li>
                 </ul>
             </div>
             <div class="col-md-4">

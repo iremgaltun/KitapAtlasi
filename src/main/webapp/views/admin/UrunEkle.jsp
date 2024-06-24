@@ -5,45 +5,47 @@
 
 <%
     try {
-        // Retrieve parameters from the request
+        // İstekten gelen parametreleri al
         String productName = request.getParameter("urunAdi");
         String productDetail = request.getParameter("urunDetayi");
-        double productPrice = Double.parseDouble(request.getParameter("urunFiyati"));
-        int categoryId = Integer.parseInt(request.getParameter("kategoriId"));
+        String productPriceStr = request.getParameter("urunFiyati");
+        String categoryIdStr = request.getParameter("kategori");
 
-        // Validate parameters
+        // Parametreleri doğrula
         if (productName == null || productName.isEmpty() ||
                 productDetail == null || productDetail.isEmpty() ||
-                productPrice <= 0 || categoryId <= 0) {
-
-            // Send conflict response if parameters are invalid
-            response.sendError(HttpServletResponse.SC_CONFLICT, "Invalid input parameters");
+                productPriceStr == null || productPriceStr.isEmpty() ||
+                categoryIdStr == null || categoryIdStr.isEmpty()) {
+            response.sendError(HttpServletResponse.SC_CONFLICT, "Geçersiz giriş parametreleri");
             return;
         }
 
-        // Create Product object
+        double productPrice = Double.parseDouble(productPriceStr);
+        int categoryId = Integer.parseInt(categoryIdStr);
+
+        // Product nesnesi oluştur
         Product product = new Product();
         product.setProductName(productName);
         product.setProductDetail(productDetail);
         product.setProductPrice(productPrice);
         product.setCategoryID(categoryId);
 
-        // Use DAO to add product
+        // DAO kullanarak ürünü ekle
         ProductDao productDao = new ProductDaoImplementation();
         boolean registrationSuccessful = productDao.addProduct(product);
 
-        // Redirect based on registration success or failure
+        // Başarıya veya başarısızlığa göre yönlendir
         if (registrationSuccessful) {
             response.sendRedirect("adminPaneli.jsp?registration=success");
         } else {
-            response.sendRedirect("musteriyonetim.jsp?registration=fail");
+            response.sendRedirect("adminPaneli.jsp?registration=fail");
         }
     } catch (NumberFormatException e) {
-        // Handle case where numeric parsing fails (ProductPrice or CategoryID)
-        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid numeric input");
+        // Sayısal ayrıştırma başarısız olursa (ProductPrice veya CategoryID)
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Geçersiz sayısal giriş");
     } catch (Exception e) {
-        // Handle other unexpected exceptions
-        e.printStackTrace(); // Log exception for debugging
-        response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
+        // Diğer beklenmedik istisnaları ele al
+        e.printStackTrace(); // Hata ayıklama için istisnayı kaydet
+        response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Sunucu iç hatası");
     }
 %>
