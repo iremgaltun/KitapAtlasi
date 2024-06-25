@@ -205,7 +205,7 @@
         <thead>
         <tr>
             <th>Ürün</th>
-            <th>Miktar</th>
+            <th>Adet</th>
             <th>Yazar</th>
             <th>Birim Fiyatı</th>
             <th>Toplam Fiyatı</th>

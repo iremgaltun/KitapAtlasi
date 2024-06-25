@@ -199,7 +199,7 @@
         <tr>
             <th>Ürün</th>
             <th></th>
-            <th>Miktar</th>
+            <th>Adet</th>
             <th>Yazar</th>
             <th>Birim Fiyatı</th>
             <th>Toplam Fiyatı</th>
@@ -277,6 +277,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
+    var order; // Global olarak order değişkenini tanımlıyoruz
+
     window.onload = function () {
         try {
             var cartItemsString = localStorage.getItem('cartItems');
@@ -366,7 +368,7 @@
             }
 
             // Sipariş bilgilerini hazırla
-            var order = {
+            order = {
                 items: cartItems,
                 totalAmount: document.querySelector('.total-amount').innerText,
                 address: {
@@ -383,22 +385,8 @@
 
             console.log('Order finalized:', order);
 
-            // Siparişlerim sayfasına yönlendir ve parametre olarak sipariş bilgilerini gönder
-
-            var url = 'siparişlerim.jsp';
-            url += '?totalAmount=' + encodeURIComponent(order.totalAmount);
-            url += '&items=' + encodeURIComponent(JSON.stringify(order.items));
-
-
-            console.log('Redirecting to:', url);
-
             // Modalı göster
             $('#confirmationModal').modal('show');
-
-            // Modal kapatıldığında yönlendirme yap
-            $('#confirmationModal').on('hidden.bs.modal', function () {
-                window.location.href = url;
-            });
 
         } catch (error) {
             console.error('Error finalizing order:', error);
@@ -407,12 +395,20 @@
     }
 
     function redirectToOrders() {
-        var url = 'siparişlerim.jsp';
-        window.location.href = url;
+        try {
+            var url = 'siparişlerim.jsp';
+            url += '?totalAmount=' + encodeURIComponent(order.totalAmount);
+            url += '&items=' + encodeURIComponent(JSON.stringify(order.items));
+            console.log('Redirecting to:', url);
+            window.location.href = url;
 
-        // Sipariş tamamlandıktan sonra sepeti temizle
-        localStorage.removeItem('cartItems');
-        // Opsiyonel olarak sayfayı yeniden yükle
+            // Sipariş tamamlandıktan sonra sepeti temizle
+            localStorage.removeItem('cartItems');
+
+        } catch (error) {
+            console.error('Error redirecting to orders:', error);
+            alert('Siparişlerim sayfasına yönlendirilirken bir hata oluştu.');
+        }
     }
 </script>
 </body>

@@ -51,7 +51,7 @@
 
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            widht:400px;
+            width:400px;
             height: 500px;
         }
 
@@ -97,19 +97,16 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="kullanıcıAnasayfa.jsp">
+    <a class="navbar-brand" href="AnaSayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <form id="searchForm" class="form-inline ml-3" onsubmit="return aramaYap()">
-                <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="kitap adı, yazar veya yayınevi ara"
-                       aria-label="Search">
+            <form class="form-inline ml-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="kitap adı, yazar veya yayınevi ara" aria-label="Search">
                 <button class="btn btn-light my-2 my-sm-0" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -121,25 +118,21 @@
                     </button>
                 </a>
             </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <div class="account-icon">
-                    <i class="fas fa-user"></i>
-                    <div class="account-dropdown">
-                        <a href="uyelikBilgilerim.jsp">Üyelik Bilgilerim</a>
-                        <a href="favorilerim.jsp">Favorilerim</a>
-                        <a href="siparişlerim.jsp">Siparişlerim</a>
-                        <a href="#">Yardım</a>
-                        <div style="border-top: 1px solid #ddd;"></div>
-                        <a href="#">Çıkış Yap</a>
-                    </div>
-                </div>
+                <a class="nav-link" href="uyeol.jsp">
+                    <button type="button" class="btn btn-light">Üye Ol</button>
+                </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="girisyap.jsp">
+                    <button type="button" class="btn btn-light">Giriş Yap</button>
+                </a>
+            </li>
+
         </ul>
+
     </div>
 </nav>
-
 
 <!-- Main content -->
 
@@ -178,3 +171,4 @@
 </body>
 
 </html>
+

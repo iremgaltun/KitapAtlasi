@@ -3,6 +3,15 @@
 <%@ page import="com.kitap.kitapatlasi.entity.User" %>
 <%@ page import="com.kitap.kitapatlasi.dao.UserDao" %>
 <%@ page import="java.util.List" %>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>

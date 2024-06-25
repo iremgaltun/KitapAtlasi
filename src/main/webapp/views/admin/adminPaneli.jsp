@@ -195,7 +195,7 @@
             window.location.href = url;
         }
     }
-   /* const kategoriler = [
+    const kategoriler = [
         { kategoriId: 9690, ad: 'Edebiyat' },
         { kategoriId: 9111, ad: 'Eğitim' },
         { kategoriId: 10269, ad: 'Roman' },
@@ -207,28 +207,23 @@
         { kategoriId: 14322, ad: 'eKitap' }
     ];
 
-
-
-    // Kategorileri <select> içine ekle
     document.addEventListener('DOMContentLoaded', function() {
         const kategoriSelect = document.getElementById('kategori');
         kategoriler.forEach(function(kategori) {
             const option = document.createElement('option');
             option.value = kategori.kategoriId;
-            option.textContent = kategori.ad + ' (' + formatId(kategori.kategoriId) + ')';
+            option.textContent = kategori.ad + ' (' + kategori.kategoriId + ')';
             kategoriSelect.appendChild(option);
         });
     });
 
-    // Kategori seçildiğinde çağrılan fonksiyon
+
     function kategoriSecildi() {
         const kategoriSelect = document.getElementById('kategori');
         const secilenIndex = kategoriSelect.selectedIndex;
         const secilenOption = kategoriSelect.options[secilenIndex];
         secilenOption.textContent = secilenOption.textContent.replace('Kategori Seç', 'Seçilen Kategori');
     }
-
-*/
 
 </script>
 

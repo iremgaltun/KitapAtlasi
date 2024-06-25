@@ -56,7 +56,7 @@
         }
 
         tr {
-            color: black;
+            color: block;
         }
 
         .product-image {
@@ -70,10 +70,8 @@
             font-weight: bold;
             margin-top: 10px;
             text-align: right;
-            margin-right:20px;
-
+            margin-right: 20px;
         }
-
     </style>
 </head>
 
@@ -83,16 +81,14 @@
     <a class="navbar-brand" href="kullanıcıAnasayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <form class="form-inline ml-3">
-                <input class="form-control mr-sm-2" type="search"
-                       placeholder="kitap adı, yazar veya yayınevi ara" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" placeholder="kitap adı, yazar veya yayınevi ara" aria-label="Search">
                 <button class="btn btn-light my-2 my-sm-0" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -113,7 +109,6 @@
                         <a href="uyelikBilgilerim.jsp">Üyelik Bilgilerim</a>
                         <a href="favorilerim.jsp">Favorilerim</a>
                         <a href="siparişlerim.jsp">Siparişlerim</a>
-
                         <a href="#">Yardım</a>
                         <div style="border-top: 1px solid #ddd;"></div>
                         <a href="#">Çıkış Yap</a>
@@ -132,7 +127,7 @@
             <th>Ürün Resmi</th>
             <th>Ürün Adı</th>
             <th>Miktar</th>
-            <th> Fiyat</th>
+            <th>Fiyat</th>
             <th>Sipariş Tarihi</th>
             <th>Sipariş Durumu</th>
             <th>Tahmini Teslimat Süresi</th>
@@ -141,8 +136,27 @@
         <tbody id="order-list">
         <!-- Here we'll dynamically add the orders -->
         </tbody>
-
     </table>
+    <div id="current-total-amount" class="total-amount"></div>
+
+    <h2>Geçmiş Siparişlerim</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Ürün Adı</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Sipariş Tarihi</th>
+            <th>Sipariş Durumu</th>
+            <th>Teslimat Tarihi</th>
+        </tr>
+        </thead>
+        <tbody id="past-order-list">
+        <!-- Here we'll dynamically add the past orders -->
+        </tbody>
+    </table>
+    <div id="past-total-amount" class="total-amount"></div>
 </div>
 
 <!-- jQuery and Bootstrap JS -->
@@ -207,10 +221,75 @@
             });
 
             // Toplam ödenen tutarı güncelle
-            var totalAmountElement = document.createElement('div');
-            totalAmountElement.className = 'total-amount';
-            totalAmountElement.innerHTML = '<h3>Toplam Ödenen Tutar: ' + totalPrice.toFixed(2) + ' TL</h3>';
-            document.body.appendChild(totalAmountElement);
+            var currentTotalAmountElement = document.getElementById('current-total-amount');
+            currentTotalAmountElement.innerHTML = '<h3>Toplam Ödenen Tutar: ' + totalPrice.toFixed(2) + ' TL</h3>';
+
+            var pastOrders = [
+                {
+                    imageUrl: '../../assets/images/kitap5.jpg',
+                    title: 'Mig Magic',
+                    quantity: 1,
+                    price: 50.00,
+                    orderDate: '2023-01-01',
+                    deliveryDate: '2023-01-05'
+                },
+                {
+                    imageUrl: '../../assets/images/kitap4.jpg',
+                    title: 'The Most Human',
+                    quantity: 2,
+                    price: 30.00,
+                    orderDate: '2023-02-15',
+                    deliveryDate: '2023-02-20'
+                }
+            ];
+
+            var pastOrderList = document.getElementById('past-order-list');
+            var pastTotalPrice = 0; // Geçmiş siparişler için toplam fiyatı saklamak için değişken
+
+            pastOrders.forEach(function (order, index) {
+                var newRow = document.createElement('tr');
+
+                var imageCell = document.createElement('td');
+                var imgElement = document.createElement('img');
+                imgElement.src = order.imageUrl; // Ürün resmi
+                imgElement.alt = order.title;
+                imgElement.className = 'product-image';
+                imageCell.appendChild(imgElement);
+
+                var titleCell = document.createElement('td');
+                titleCell.textContent = order.title; // Ürün adı
+
+                var quantityCell = document.createElement('td');
+                quantityCell.textContent = order.quantity; // Ürün miktarı
+
+                var priceCell = document.createElement('td');
+                var totalOrderPrice = order.quantity * order.price;
+                priceCell.textContent = totalOrderPrice.toFixed(2) + ' TL'; // Fiyat
+                pastTotalPrice += totalOrderPrice; // Geçmiş siparişler toplam fiyata ekle
+
+                var orderDateCell = document.createElement('td');
+                orderDateCell.textContent = order.orderDate; // Sipariş tarihi
+
+                var orderStatusCell = document.createElement('td');
+                orderStatusCell.textContent = 'Teslim Edildi'; // Örnek olarak sabit bir sipariş durumu
+
+                var deliveryDateCell = document.createElement('td');
+                deliveryDateCell.textContent = order.deliveryDate; // Teslimat tarihi
+
+                newRow.appendChild(imageCell);
+                newRow.appendChild(titleCell);
+                newRow.appendChild(quantityCell);
+                newRow.appendChild(priceCell);
+                newRow.appendChild(orderDateCell);
+                newRow.appendChild(orderStatusCell);
+                newRow.appendChild(deliveryDateCell);
+
+                pastOrderList.appendChild(newRow);
+            });
+
+            // Geçmiş siparişler için toplam ödenen tutarı güncelle
+            var pastTotalAmountElement = document.getElementById('past-total-amount');
+            pastTotalAmountElement.innerHTML = '<h3>Toplam Ödenen Tutar: ' + pastTotalPrice.toFixed(2) + ' TL</h3>';
 
         } catch (error) {
             console.error('Error loading orders:', error);

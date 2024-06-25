@@ -24,7 +24,19 @@
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/scrollbar.css">
     <link rel="stylesheet" href="../css/urunler.css">
-    
+    <style>
+        .modal-content {
+            border-radius: 10px;
+        }
+
+        .modal-header,
+        .modal-footer {
+            border: none;
+        }
+        main {
+            margin-top: 30px; /* Ana içerik alanı ile navbar arasındaki boşluk */
+        }
+    </style>
     
    
 </head>
@@ -80,65 +92,74 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="edebiyat.jsp">
-                            Edebiyat
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="egitim.jsp">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Egitim">
                             Eğitim
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="roman.jsp">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Edebiyat">
+                            Edebiyat
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Roman">
                             Roman
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="roman.jsp">
-                            Biyogrofi
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="roman.jsp">
-                            Bilim Kurgu
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="roman.jsp">
-                            Genç Yetişkin
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cocuk.jsp">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Cocuk%20ve%20Genclik">
                             Çocuk
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tarih.jsp">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Cizgi%20Roman">
+                            Çizgi Roman
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Tarih">
                             Tarih
                         </a>
                     </li>
+
+
                     <li class="nav-item">
-                        <a class="nav-link" href="felsefe.jsp">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Yagancı%20Dil">
+                            Yabancı Dil
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Felsefe">
                             Felsefe
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
-                            Çizgi Roman
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Kişisel+Gelisim">
                             Kişisel Gelişim
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=e-kitap">
                             e-kitap
                         </a>
                     </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Bilim Kurgu">
+                            Bilim Kurgu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Genç Yetişkin">
+                            Genç Yetişkin
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -154,11 +175,12 @@
                         <img src="<%= request.getContextPath()  + "/assets/images/" + product.getProductImage() %>" class="card-img-top" alt="Kitap Görseli">
                         <div class="card-body">
                             <h5 class="card-title"><%= product.getProductName() %></h5>
-                            <p class="card-text">Yazar: <%= product.getProductDetail() %></p>
+
                             <p class="card-text">Fiyat: <%= product.getProductPrice() %></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Görüntüle</button>
+                                    <a href="AnaUrunDetay.jsp?productId=<%= product.getProductID() %>" class="btn btn-sm btn-outline-secondary">Görüntüle</a>
+
                                     <button type="button" class="btn btn-sm btn-orange" onclick="addToCart('<%= product.getProductName() %>', '<%= product.getProductDetail() %>', <%= product.getProductPrice() %>, '<%= request.getContextPath()  + "/assets/images/" + product.getProductImage() %>')">Sepete Ekle</button>
                                 </div>
                             </div>
@@ -166,7 +188,23 @@
                     </div>
                 </div>
                 <% } %>
+                <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addToCartModalLabel">Ürün Sepete Eklendi!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Ürün başarıyla sepete eklendi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </main>
         </div>
 
@@ -239,7 +277,7 @@
             $('#addToCartModal').modal('show');
             setTimeout(function() {
                 $('#addToCartModal').modal('hide');
-            }, 2000); // 2 saniye sonra modalı gizliyoruz
+            }, 1000); // 2 saniye sonra modalı gizliyoruz
         } catch (error) {
             console.error('Error adding item to cart:', error);
             alert('Sepete Ürün Ekleyebilmek İçin Giriş yapınız.Hesabınız Yoksa Üye Olunuz');

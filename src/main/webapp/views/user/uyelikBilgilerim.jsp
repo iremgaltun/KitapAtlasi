@@ -162,7 +162,7 @@
                 </div>
                 <button type="button" class="btn btn-primary-custom">Adres Bilgilerimi Güncelle</button>
             </form>
-            <h3>Kayıtlı Adreslerim</h3>
+
             <!-- Kayıtlı adresler burada listelenecek -->
         </div>
 

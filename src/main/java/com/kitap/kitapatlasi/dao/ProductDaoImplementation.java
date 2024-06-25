@@ -13,13 +13,13 @@ import java.util.List;
 public class ProductDaoImplementation implements ProductDao {
 
     private Connection conn;
-    private PreparedStatement ps;
+
 
 
     @Override
     public List<Product> getAllProduct() {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT * FROM [Product]";
+        String query = "SELECT * FROM Product";
         try (Connection conn = ConnectionController.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
@@ -98,14 +98,12 @@ public class ProductDaoImplementation implements ProductDao {
     }
 
 
-
-    // Spesifik bir kategori ismi girdiğinizde o kategorideki ürünleri listeleyen metot
-    @Override
+   @Override
     public List<Product> getProductsByCategoryName(String categoryName) {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT p.ProductID, p.ProductName, p.ProductDetail, p.ProductPrice, p.ProductImage, c.categoryName " +
-                "FROM Product p JOIN Category c ON p.CategoryID = c.categoryID " +
-                "WHERE c.categoryName = ?";
+        String query = "SELECT p.ProductID, p.ProductName, p.ProductDetail, p.ProductPrice, p.ProductImage, p.CategoryID " +
+                "FROM [Product] p JOIN [Category] c ON p.CategoryID = c.CategoryID " +
+                "WHERE c.CategoryName = ?";
 
         try (Connection conn = ConnectionController.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -123,12 +121,13 @@ public class ProductDaoImplementation implements ProductDao {
                     products.add(product);
                 }
             }
-
+            System.out.println("Bulunan ürün sayısı: " + products.size());
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return products;
     }
+
     public boolean deleteProduct(int productID) {
         String deleteQuery = "DELETE FROM Product WHERE ProductID = ?";
         try (Connection conn = ConnectionController.getConnection();
@@ -141,8 +140,8 @@ public class ProductDaoImplementation implements ProductDao {
 
         } catch (SQLException e) {
             System.err.println("Veritabanı hatası: " + e.getMessage());
-            return false;
-        }
+
+        }return false;
     }
 
 
@@ -169,4 +168,64 @@ public class ProductDaoImplementation implements ProductDao {
         }
         return null;
     }
+
+
+
+
+    public Product getProductByID(int productID) {
+        String query = "SELECT * FROM [Product] WHERE ProductID = ?";
+        try (Connection conn = ConnectionController.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, productID);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Product(
+                            rs.getString("ProductName"),
+                            rs.getString("ProductDetail"),
+                            rs.getDouble("ProductPrice"),
+                            rs.getString("ProductImage"),
+                            rs.getInt("ProductID"));
+                    // Read image as byte array
+
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    public List<Product> getProductByCategoryID(int CategoryID) {
+        List<Product> products = new ArrayList<>();
+        String query = "SELECT * FROM [Product] WHERE CategoryID = ?";
+        try (Connection conn = ConnectionController.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, CategoryID);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Product product = new Product(
+                            rs.getInt("ProductID"),
+                            rs.getString("ProductName"),
+                            rs.getString("ProductDetail"),
+                            rs.getDouble("ProductPrice"),
+                            rs.getString("ProductImage"),
+                            rs.getInt("CategoryID"));
+                    products.add(product);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
+
+
+
+
+
+
 }

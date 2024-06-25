@@ -5,13 +5,18 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/DeleteProduct.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/UrunEkle.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/adminGiris.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/adminPaneli.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/musteriyonetim.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/AnaSayfa.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/AnaUrunDetay.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/AnasayfaKategori.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/KullaniciKategori.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/UyeOnay.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/girisyap.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/kullanıcıAnasayfa.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/sepetOnayla.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/urundetay.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user" />
       </map>
     </option>
   </component>

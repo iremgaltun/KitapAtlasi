@@ -27,7 +27,7 @@
     width: 600px; /* Arama çubuğu genişliği düzenlendi */
     border-radius: 30px; /* Arama çubuğu köşeleri yuvarlandı */
     border: 2px solid orange; /* Kenarlık turuncu */
-    margin-left: 10px; /* Arama çubuğu ve ikon arasındaki boşluk azaltıldı */
+    margin-left: 5px; /* Arama çubuğu ve ikon arasındaki boşluk azaltıldı */
 }
 
 .navbar .btn-light,

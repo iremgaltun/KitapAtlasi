@@ -73,9 +73,14 @@ public class AdminDaoImplementation {
                 System.out.println("Kapatma hatası: " + sqlException.getMessage());
             }
         }
+        if (result) {
+            System.out.println("Kullanıcı doğrulama başarılı: " + admin.getAdminMail());
+        } else {
+            System.out.println("Kullanıcı doğrulama başarısız: " + admin.getAdminMail());
+        }
+
 
         return result;
     }
 
 }
-

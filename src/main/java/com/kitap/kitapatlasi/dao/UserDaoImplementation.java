@@ -131,10 +131,13 @@ public class UserDaoImplementation implements UserDao {
         boolean result = false;
         String sorgu = "SELECT mail, password FROM [User] WHERE mail = ?";
 
-
-
         try {
             conn = ConnectionController.getConnection();
+            if (conn == null) {
+                System.out.println("Connection failed!");
+                return false;
+            }
+
             ps = conn.prepareStatement(sorgu);
             ps.setString(1, user.getMail());
             ResultSet rs = ps.executeQuery();
@@ -144,33 +147,32 @@ public class UserDaoImplementation implements UserDao {
 
                 if (PasswordDB != null && PasswordDB.equals(user.getPassword())) {
                     result = true;
+                } else {
+                    System.out.println("Password mismatch for user: " + user.getMail());
                 }
+            } else {
+                System.out.println("User not found: " + user.getMail());
             }
         } catch (SQLException exception) {
-            System.out.println("Veritabanı hatası: " + exception.getMessage());
+            System.out.println("Database error: " + exception.getMessage());
         } finally {
             try {
                 if (ps != null) {
                     ps.close();
                 }
-               
                 if (conn != null) {
                     conn.close();
                 }
             } catch (SQLException sqlException) {
-                System.out.println("Kapatma hatası: " + sqlException.getMessage());
+                System.out.println("Closing error: " + sqlException.getMessage());
             }
         }
 
-        // Debug mesajları
         if (result) {
-            System.out.println("Kullanıcı doğrulama başarılı: " + user.getMail());
+            System.out.println("User validation successful: " + user.getMail());
         } else {
-            System.out.println("Kullanıcı doğrulama başarısız: " + user.getMail());
+            System.out.println("User validation failed: " + user.getMail());
         }
 
         return result;
-    }
-
-
-}
+}}

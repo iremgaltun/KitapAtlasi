@@ -3,6 +3,13 @@
 <%@ page import="com.kitap.kitapatlasi.entity.Admin" %>
 <%@ page import="jakarta.servlet.http.*" %>
 
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -10,39 +17,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yönetici Girişi</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .login-container {
-            margin-top: 100px;
-        }
-        .login-form {
-            max-width: 400px;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: orange;
-        }
-        .form-control {
-            margin-bottom: 20px;
-        }
-        .btn-orange {
-            background-color: orange;
-            color: white;
-        }
-    </style>
+
+    <link rel="stylesheet" href="../css/girisuye.css">
 </head>
 <body>
 <div class="container login-container">
     <div class="login-form">
         <h2 class="form-title">Yönetici Girişi</h2>
-        <form method="post" action="musteriyonetim.jsp">
+        <form method="post" action="adminGiris.jsp">
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" name="email" required>
@@ -63,19 +45,15 @@
 
             if (dao.control(admin)) {
                 // Set session attribute and redirect
-                HttpSession a = request.getSession();
-                a.setAttribute("loggedInAdmin", adminMail);
-                response.sendRedirect("musteriyonetim.jsp");
+                HttpSession sess = request.getSession(true); // true to create new session if doesn't exist
+                sess.setAttribute("loggedInAdmin", adminMail);
+                response.sendRedirect("adminPaneli.jsp"); // Redirect to admin panel or dashboard
             } else {
-                // Show error message if authentication fails
         %>
         <div class="alert alert-danger" role="alert">
             Giriş başarısız. Lütfen email ve şifrenizi kontrol edin.
         </div>
-        <%
-                }
-            } %>
-
+        <% } } %> <!-- End of form submission handling -->
     </div>
 </div>
 </body>

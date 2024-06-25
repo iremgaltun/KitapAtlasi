@@ -16,11 +16,20 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/girisuye.css">
     <link rel="stylesheet" href="../css/scrollbar.css">
-
     <link rel="stylesheet" href="../css/snackbar.css">
     <style>
-        .footer{
-            margin-top:300px;
+        .footer {
+            margin-top: 300px;
+        }
+        .admin-link {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: gray;
+        }
+        .admin-link a {
+            color: gray;
         }
     </style>
 </head>
@@ -84,33 +93,35 @@
             <button type="submit" class="btn btn-orange btn-block">Giriş Yap</button>
         </form>
 
-        <% if ("POST".equalsIgnoreCase(request.getMethod())) {
-            String mail = request.getParameter("email");
-            String password = request.getParameter("password");
+        <%
+            if ("POST".equalsIgnoreCase(request.getMethod())) {
+                String mail = request.getParameter("email");
+                String password = request.getParameter("password");
 
-            User user = new User(mail, password);
-            UserDaoImplementation userDaoImplementation = new UserDaoImplementation();
+                User user = new User(mail, password);
+                UserDaoImplementation userDaoImplementation = new UserDaoImplementation();
 
-            if (userDaoImplementation.ControlUser(user)) {
-                // Set session attribute and redirect
-                HttpSession a = request.getSession();
-                a.setAttribute("loggedInUser", mail);
-                response.sendRedirect("kullanıcıAnasayfa.jsp");
-            } else {
-                // Show error message if authentication fails
+                if (userDaoImplementation.ControlUser(user)) {
+                    // Set session attribute and redirect
+                    HttpSession a = request.getSession(true);
+                    a.setAttribute("loggedInUser", mail);
+                    response.sendRedirect("kullanıcıAnasayfa.jsp");
+                } else {
+                    // Show error message if authentication fails
         %>
         <div class="alert alert-danger" role="alert">
             Giriş başarısız. Lütfen email ve şifrenizi kontrol edin.
         </div>
         <%
                 }
-            } %>
-
+            }
+        %>
         <div class="signup-link">
             Hesabın yok mu? <a href="uyeol.jsp">Üye ol</a>
         </div>
     </div>
-</div>
+</body>
+</html>
 
 <!-- Snackbar -->
 <div id="snackbar">Giriş yapıldı</div>
@@ -151,8 +162,14 @@
     </div>
 </footer>
 
+<!-- Admin Girişi -->
+<div class="admin-link">
+    <a href="../admin/adminGiris.jsp">Yönetici Girişi</a>
+</div>
+
 <!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>
