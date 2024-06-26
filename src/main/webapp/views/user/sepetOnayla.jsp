@@ -148,7 +148,7 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="kullanıcıAnasayfa.jsp">
+    <a class="navbar-brand" href="kullaniciAnasayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -200,7 +200,7 @@
             <th>Ürün</th>
             <th></th>
             <th>Adet</th>
-            <th>Yazar</th>
+            <th></th>
             <th>Birim Fiyatı</th>
             <th>Toplam Fiyatı</th>
         </tr>

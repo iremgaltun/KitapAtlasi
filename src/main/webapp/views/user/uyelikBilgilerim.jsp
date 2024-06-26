@@ -66,7 +66,7 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="kullaniciAnasayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"

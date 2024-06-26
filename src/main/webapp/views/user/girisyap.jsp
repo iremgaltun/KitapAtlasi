@@ -81,7 +81,7 @@
 <div class="container mt-5">
     <div class="login-container">
         <h2 class="mb-4 text-center">Giriş Yap</h2>
-        <form method="POST" action="kullanıcıAnasayfa.jsp">
+        <form method="POST" action="girisyap.jsp">
             <div class="form-group">
                 <label for="email">E-posta Adresi</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="E-posta adresinizi girin" required>
@@ -103,9 +103,9 @@
 
                 if (userDaoImplementation.ControlUser(user)) {
                     // Set session attribute and redirect
-                    HttpSession a = request.getSession(true);
-                    a.setAttribute("loggedInUser", mail);
-                    response.sendRedirect("kullanıcıAnasayfa.jsp");
+                    HttpSession saas = request.getSession(true);
+                    saas.setAttribute("loggedInUser", mail);
+                    response.sendRedirect("kullaniciAnasayfa.jsp");
                 } else {
                     // Show error message if authentication fails
         %>

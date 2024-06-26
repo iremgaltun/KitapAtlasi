@@ -42,7 +42,7 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="kullaniciAnasayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -86,88 +86,88 @@
 </nav>
 <div class="container-fluid">
     <div class="row">
-<!-- Sidebar and Content -->
-<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
-    <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">
-                    <strong>KATEGORİLER</strong>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Egitim">
-                    Eğitim
-                </a>
-            </li>
+        <!-- Sidebar and Content -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <strong>KATEGORİLER</strong>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Egitim">
+                            Eğitim
+                        </a>
+                    </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Edebiyat">
-                    Edebiyat
-                </a>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Edebiyat">
+                            Edebiyat
+                        </a>
+                    </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Roman">
-                    Roman
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Cocuk%20ve%20Genclik">
-                    Çocuk
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Cizgi%20Roman">
-                    Çizgi Roman
-                </a>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Roman">
+                            Roman
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Cocuk%20ve%20Genclik">
+                            Çocuk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Cizgi%20Roman">
+                            Çizgi Roman
+                        </a>
+                    </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Tarih">
-                    Tarih
-                </a>
-            </li>
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Yagancı%20Dil">
-                    Yabancı Dil
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Felsefe">
-                    Felsefe
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Kişisel+Gelisim">
-                    Kişisel Gelişim
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=e-kitap">
-                    e-kitap
-                </a>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Tarih">
+                            Tarih
+                        </a>
+                    </li>
 
 
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Bilim Kurgu">
-                    Bilim Kurgu
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="KullaniciKategori.jsp?kategori=Genç Yetişkin">
-                    Genç Yetişkin
-                </a>
-            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Yagancı%20Dil">
+                            Yabancı Dil
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Felsefe">
+                            Felsefe
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Kişisel+Gelisim">
+                            Kişisel Gelişim
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=e-kitap">
+                            e-kitap
+                        </a>
+                    </li>
 
 
-        </ul>
-    </div>
-</nav>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Bilim Kurgu">
+                            Bilim Kurgu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KullaniciKategori.jsp?kategori=Genç Yetişkin">
+                            Genç Yetişkin
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
 
 
         <!-- Main content -->
@@ -187,8 +187,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="urundetay.jsp?productId=<%= product.getProductID() %>" class="btn btn-sm btn-outline-secondary">Görüntüle</a>
-                                    <button type="button" class="btn btn-sm btn-orange" onclick="addToCart('<%= product.getProductName() %>', '<%= product.getProductDetail() %>', <%= product.getProductPrice() %>, '<%= request.getContextPath()  + "/assets/images/" + product.getProductImage() %>')">Sepete Ekle</button>
-
+                                    <button type="button" class="btn btn-sm btn-orange" onclick="addToCart('<%= product.getProductName() %>', <%= product.getProductPrice() %>, '<%= request.getContextPath()  + "/assets/images/" + product.getProductImage() %>')">Sepete Ekle</button>
                                 </div>
                             </div>
                         </div>
@@ -212,10 +211,10 @@
                 <% } %>
 
 
-                </div>
+            </div>
 
         </main>
-        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -253,68 +252,67 @@
             <p class="text-center">&copy; 2024 Kitap Atlası. Tüm hakları saklıdır.</p>
         </div>
     </footer>
-        <!-- JavaScript -->
-        <script>
-            function aramaYap() {
-                var input, filter, div, h5, txtValue;
-                input = document.getElementById("searchInput");
-                filter = input.value.toUpperCase();
-                div = document.getElementById("Product").getElementsByClassName("col-md-4");
+    <!-- JavaScript -->
+    <script>
+        function aramaYap() {
+            var input, filter, div, h5, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("Product").getElementsByClassName("col-md-4");
 
-                for (var i = 0; i < div.length; i++) {
-                    h5 = div[i].getElementsByTagName("h5")[0];
-                    if (h5) {
-                        txtValue = h5.textContent || h5.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            div[i].style.display = "";
-                        } else {
-                            div[i].style.display = "none";
-                        }
-                    }
-                }
-                return false;
-            }
-
-            function addToCart(title, author, price, imageUrl, quantity = 1) {
-                var item = {
-                    "title": title,
-                    "author": author,
-                    "price": price,
-                    "imageUrl": imageUrl,  // Ürün resmini ekliyoruz
-                    "quantity": quantity
-                };
-
-                try {
-                    // localStorage'den mevcut sepet öğelerini alıyoruz veya boş bir dizi oluşturuyoruz
-                    var cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
-
-                    // Eğer sepet öğeleri içinde aynı başlık, yazar ve fiyatta bir öğe varsa, miktarı artırıyoruz
-                    var existingItem = cartItems.find(item => item.title === title && item.author === author && item.price === price);
-                    if (existingItem) {
-                        existingItem.quantity += quantity;
+            for (var i = 0; i < div.length; i++) {
+                h5 = div[i].getElementsByTagName("h5")[0];
+                if (h5) {
+                    txtValue = h5.textContent || h5.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        div[i].style.display = "";
                     } else {
-                        // Yoksa yeni öğeyi sepete ekliyoruz
-                        cartItems.push(item);
+                        div[i].style.display = "none";
                     }
-
-                    // Güncellenmiş sepet öğelerini localStorage'e kaydediyoruz
-                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                    console.log('Updated cartItems:', cartItems);
-
-                    // Sepete ekleme modalını gösteriyoruz
-                    $('#addToCartModal').modal('show');
-                    setTimeout(function() {
-                        $('#addToCartModal').modal('hide');
-                    }, 1000); // 2 saniye sonra modalı gizliyoruz
-                } catch (error) {
-                    console.error('Error adding item to cart:', error);
-                    alert('Sepete Ürün Ekleyebilmek İçin Giriş yapınız.Hesabınız Yoksa Üye Olunuz');
                 }
             }
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </div>
+            return false;
+        }
+
+        function addToCart(title, price, imageUrl, quantity = 1) {
+            var item = {
+                "title": title,
+                "price": price,
+                "imageUrl": imageUrl,
+                "quantity": quantity
+            };
+
+            try {
+                // localStorage'den mevcut sepet öğelerini alıyoruz veya boş bir dizi oluşturuyoruz
+                var cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+
+                // Eğer sepet öğeleri içinde aynı başlık ve fiyatta bir öğe varsa, miktarı artırıyoruz
+                var existingItem = cartItems.find(item => item.title === title && item.price === price);
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    // Yoksa yeni öğeyi sepete ekliyoruz
+                    cartItems.push(item);
+                }
+
+                // Güncellenmiş sepet öğelerini localStorage'e kaydediyoruz
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                console.log('Updated cartItems:', cartItems);
+
+                // Sepete ekleme modalını gösteriyoruz
+                $('#addToCartModal').modal('show');
+                setTimeout(function() {
+                    $('#addToCartModal').modal('hide');
+                }, 1000); // 1 saniye sonra modalı gizliyoruz
+            } catch (error) {
+                console.error('Error adding item to cart:', error);
+                alert('Sepete Ürün Ekleyebilmek İçin Giriş yapınız.Hesabınız Yoksa Üye Olunuz');
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
 </div>
 </body>
 

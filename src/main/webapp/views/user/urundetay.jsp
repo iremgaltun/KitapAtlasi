@@ -97,7 +97,7 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="kullanıcıAnasayfa.jsp">
+    <a class="navbar-brand" href="kullaniciAnasayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -155,7 +155,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h15 class="card-title"><%= product != null ? product.getProductName() : "Ürün Bulunamadı" %></h15>
+                            <h5 class="card-title"><%= product != null ? product.getProductName() : "Ürün Bulunamadı" %></h5>
                             <h15 class="card-title"><%= product != null ? product.getProductDetail() : "Detay Bulunamadı" %></h15>
                             <p class="card-text">Fiyat: ₺<%= product != null ? product.getProductPrice() : "0.00" %></p>
                             <button type="button" class="btn btn-orange" onclick="addToCart()">Sepete Ekle</button>

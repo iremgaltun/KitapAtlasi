@@ -78,7 +78,7 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="kullanıcıAnasayfa.jsp">
+    <a class="navbar-brand" href="kullaniciAnasayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,9 +124,9 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Ürün Resmi</th>
+            <th></th>
             <th>Ürün Adı</th>
-            <th>Miktar</th>
+            <th>Adet</th>
             <th>Fiyat</th>
             <th>Sipariş Tarihi</th>
             <th>Sipariş Durumu</th>

@@ -101,7 +101,7 @@ public class ProductDaoImplementation implements ProductDao {
    @Override
     public List<Product> getProductsByCategoryName(String categoryName) {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT p.ProductID, p.ProductName, p.ProductDetail, p.ProductPrice, p.ProductImage, p.CategoryID " +
+        String query = "SELECT p.ProductID, p.ProducstName, p.ProductDetail, p.ProductPrice, p.ProductImage, p.CategoryID " +
                 "FROM [Product] p JOIN [Category] c ON p.CategoryID = c.CategoryID " +
                 "WHERE c.CategoryName = ?";
 

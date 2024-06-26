@@ -58,13 +58,4 @@ public class Order {
         this.Payment = Payment;
     }
 
-    @Override
-    public String toString() {
-        return
-                "OrderID "+OrderID+" ,UserID " + UserID +
-                ", OrderDate='" + OrderDate + '\'' +
-                ", ShippingDate='" + ShippingDate + '\'' +
-                ", DeliveryDate='" + DeliveryDate + '\'' +
-                ", Payment='" + Payment ;
-    }
 }

@@ -155,7 +155,7 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="kullanıcıAnasayfa.jsp">
+    <a class="navbar-brand" href="kullaniciAnasayfa.jsp">
         <img src="../../assets/images/logo.jpg" alt="Kitap Logo" class="kitap-logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -206,7 +206,6 @@
         <tr>
             <th>Ürün</th>
             <th>Adet</th>
-            <th>Yazar</th>
             <th>Birim Fiyatı</th>
             <th>Toplam Fiyatı</th>
             <th>İşlemler</th>
@@ -315,7 +314,6 @@
 
                 newRow.appendChild(titleCell);
                 newRow.appendChild(quantityCell);
-                newRow.appendChild(authorCell);
                 newRow.appendChild(priceCell);
                 newRow.appendChild(totalPriceCell);
                 newRow.appendChild(removeButtonCell);
